@@ -38,3 +38,12 @@
 
 # Composer PHAR
 /composer.phar
+
+#*.p
+.idea
+*.pyc
+src/CoreBundle/Resources/public/python/*.pyc
+src/CoreBundle/Resources/public/user_uploads/*.jpg
+src/CoreBundle/Resources/public/user_uploads/*.png
+src/CoreBundle/Resources/public/files/
+src/CoreBundle/Resources/public/keypoints/
