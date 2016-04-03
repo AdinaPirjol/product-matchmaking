@@ -1,0 +1,40 @@
+ajax:
+    pattern: /ajax
+    defaults: { _controller: CoreBundle:UserUploadPhoto:ajax }
+    options:
+        expose: true
+
+
+index:
+    pattern: /index
+    defaults: { _controller: CoreBundle:UserUploadPhoto:showUploadPage }
+
+
+adminPage:
+    pattern: /adminPage
+    defaults: { _controller: CoreBundle:Index:index }
+
+
+updateDatabase:
+    pattern: /updateDatabase
+    defaults: { _controller: CoreBundle:UpdateDatabase:updateDatabase }
+
+
+responsePage:
+    pattern: /responsePage
+    defaults: { _controller: CoreBundle:UserResponsePage:responsePage }
+
+
+getCategories:
+    pattern: /getCategories
+    defaults: { _controller: CoreBundle:UpdateDatabase:getCategories }
+
+
+getProducts:
+    pattern: /getProducts
+    defaults: { _controller: CoreBundle:UpdateDatabase:getProducts }
+
+
+getKeypoints:
+    pattern: /getKeypoints
+    defaults: { _controller: CoreBundle:UpdateDatabase:getKeypoints }

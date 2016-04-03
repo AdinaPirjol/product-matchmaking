@@ -1,0 +1,51 @@
+html,
+body {
+    min-height: 100%;
+    margin:0;
+    padding:0;
+}
+
+body {
+    text-align: center;
+    background: linear-gradient(to bottom,#fcfdff 0px,#e8eff9 409px);
+    background-image: linear-gradient(rgb(252, 253, 255) 0px, rgb(232, 239, 249) 409px);
+    font-family: "Segoe UI","Frutiger","Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;
+}
+
+#emag_background {
+    width: 15%;
+    height: 15%;
+    margin-bottom: 100px;
+}
+
+#footer {
+    width:100%;
+    height:30px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    font-size: 15px;
+}
+
+#wrapper {
+    min-height:100%;
+    position:relative;
+}
+
+#main {
+    min-width: 400px;
+    margin-right: 10px;
+    border:1px solid #C3C4C5;
+    padding: 20px 30px;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    background-color: white;
+    display: inline-block;
+    vertical-align: top;
+}
+
+p{
+    margin-bottom: 0;
+}
+

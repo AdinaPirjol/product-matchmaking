@@ -1,0 +1,53 @@
+h1,
+h2,
+h3 {
+    text-align: center;
+    color: #428bca;
+}
+
+#updateProducts,
+#updateCategories,
+#updateKeypoints {
+
+    display: none;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#main {
+    width: 26%;
+}
+
+#chooseTable{
+
+    width: 90%;
+    margin: 0 auto;
+}
+
+.error {
+    color: #FF0000;
+}
+
+#error {
+    text-align: center;
+}
+
+#file{
+    display: none;
+}
+
+#choose_file{
+    margin-bottom: 0;
+}
+
+#input_picture{
+    cursor: pointer;
+}
+
+.has-error #input_picture:hover {
+    color: red;
+}
+
+.has-success #input_picture{
+    color: green;
+}

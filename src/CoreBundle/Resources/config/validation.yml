@@ -1,0 +1,18 @@
+CoreBundle\Entity\Product:
+    properties:
+        name:
+            - NotBlank: ~
+            - Length:
+                min: 4
+                minMessage: "Product name must be at least {{ limit }} characters length"
+        link_emag:
+            - NotBlank: ~
+            - Url: ~
+
+CoreBundle\Entity\Category:
+    properties:
+        name:
+            - NotBlank: ~
+            - Length:
+                min: 4
+                minMessage: "Category name must be at least {{ limit }} characters length"

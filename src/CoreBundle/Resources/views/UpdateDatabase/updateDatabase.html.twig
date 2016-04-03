@@ -1,0 +1,77 @@
+{% extends "CoreBundle::layout.html.twig" %}
+
+{% block title %}eTAG - Admin panel{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset("bundles/core/bootstrap-3.2.0-dist/css/bootstrap.css") }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset("bundles/core/css/update_database.css") }}">
+{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+
+        {% include 'CoreBundle::header.php.twig' %}
+        <div id="main">
+
+            <h2>Update database</h2>
+            <br>
+            <p id="chooseTable">
+                <select id="options" name="chooseTable" class="form-control">
+                    <option value="None" selected disabled>Choose table ...</option>
+                    <option value="Products">Products</option>
+                    <option value="Categories">Categories</option>
+                    <option value="Keypoints">Keypoints</option>
+                </select>
+            </p>
+
+            <form id="updateProducts" action="updateDatabase" method="post">
+                <br>
+                <select id='categoriesSelector' name='category' class='form-control' required>
+                    <option value='' name='none' selected disabled>Choose category ...</option>
+                </select>
+                <br>
+                <input type="text" name="name" value="" class="form-control" placeholder="Name ..." required><br>
+                <input type="text" name="link" value="" class="form-control" placeholder="Link eMAG ..." required><br>
+                <input type="submit" value="Update" name="formProduct" class="btn btn-success">
+            </form>
+
+            <form id="updateCategories" action="updateDatabase" method="post">
+                <br>
+                <input type="text" name="name" value="" class="form-control" placeholder="Name ..." required><br>
+                <input type="submit" value="Update" name="formCategory" class="btn btn-success">
+            </form>
+
+            <form id="updateKeypoints" action="/bundles/core/python/enter_keypoints.py" method="post" enctype="multipart/form-data">
+                <div class="form-group has-error has-feedback" id="choose_file">
+                    <label class="control-label" for="input_picture"><br></label>
+                    <input type="text" class="form-control" id="input_picture" value="Click HERE to upload file..." readonly>
+                    <span class="glyphicon glyphicon-remove form-control-feedback" id="glyph"></span>
+                    <input type="file" name="file" id="file" required><br>
+                </div>
+                <select id='productsSelector' name='product' class='form-control' required>
+                    <option value='None' selected disabled>Choose product ...</option>
+                </select><br>
+                <input type="hidden" id="category" name="category"/>
+                <input type="submit" name="form3" value="Update" class="btn btn-success">
+            </form>
+
+            <p id="error">
+                {% if message is iterable %}
+                    {% for mess in message %}
+                        <br><span class="error">{{ mess }}</span>
+                    {% endfor %}
+                {% else %}
+                        <br><span class="error">{{ message }}</span>
+                {% endif %}
+            </p>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src={{ asset("http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js") }}></script>
+    <script type="text/javascript" src={{ asset("bundles/core/js/update_database.js") }}></script>
+{% endblock %}

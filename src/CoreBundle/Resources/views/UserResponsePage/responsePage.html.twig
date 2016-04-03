@@ -1,0 +1,41 @@
+{% extends "CoreBundle::layout.html.twig" %}
+
+{% block title %}eTAG - Result{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset("bundles/core/css/response_style.css") }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset("bundles/core/bootstrap-3.2.0-dist/css/bootstrap.css") }}">
+{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+
+        {% include 'CoreBundle::header.php.twig' %}
+
+        <div id="main">
+            <h3> You searched for </h3>
+            <img class="img-thumbnail" style="height:200px;" src='{{ asset(path) }}'>
+            <br/><br/>
+            {% if matches != -1 %}
+                <h2> We found </h2>
+                <table class="table-bordered table-hover">
+                    {% for index, match in matches %}
+                        <tr>
+                            <td style="padding:5px;">
+                                <img style="height:100px;margin-right:10px;" src="{{ asset('/bundles/core/files/' ~ match.category ~ '/' ~ match.id ~ '.jpg') }}">
+                            </td>
+                            <td style="padding:10px;">
+                                <a href="{{ match.link }}" target="_blank">{{ match.name }}</a><br/>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <h2>We didn't find any matches.</h2>
+            {% endif %}
+        </div>
+
+    </div>
+
+{% endblock %}

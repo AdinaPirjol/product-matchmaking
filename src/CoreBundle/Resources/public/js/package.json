@@ -1,0 +1,11 @@
+{
+  "name": "tag-match",
+  "version": "0.1.0",
+  "author": "Adina Pirjol",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-compass": "~0.6.0"
+  }
+}

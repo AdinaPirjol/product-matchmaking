@@ -1,0 +1,23 @@
+{% extends "CoreBundle::layout.html.twig" %}
+
+{% block title %}eTAG{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset("bundles/core/css/index_style.css") }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset("bundles/core/bootstrap-3.2.0-dist/css/bootstrap.css") }}">
+{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+
+        {% include 'CoreBundle::header.php.twig' %}
+
+        <div id="main">
+            <p><a href="index">Upload a photo to get a match</a></p>
+            <p><a href="updateDatabase">Update database</a></p>
+        </div>
+
+    </div>
+
+{% endblock %}
